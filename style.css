@@ -1,0 +1,155 @@
+@font-face {
+  font-family: Overpass;
+  src: url('./assets/fonts/overpass-v16-latin-700.woff2') format('woff2');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Overpass;
+  src: url('./assets/fonts/overpass-v16-latin-400.woff2') format('woff2');
+  font-weight: 400;
+}
+
+:root {
+  --accent-clr: hsl(25, 97%, 53%);
+
+  --white: hsl(0, 0%, 100%);
+  --light-Grey: hsl(217, 12%, 63%);
+  --dark-Blue: hsl(213, 19%, 18%);
+  --very-Dark-Blue: hsl(216, 12%, 8%);
+  --btn-bg: hsl(215, 18%, 19%);
+
+  --font: 15px;
+}
+
+body {
+  margin: 0;
+  font-family: Overpass;
+  font-size: var(--font);
+  background-color: var(--very-Dark-Blue);
+  color: var(--white);
+}
+
+
+/* ! -------------------------- */
+main {
+  min-block-size: 100vh;
+  min-inline-size: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 2rem;
+  box-sizing: border-box;
+}
+
+.containers {
+  max-inline-size: 415px;
+  background: linear-gradient(to top right, #171e26, #1e252f);
+  box-sizing: border-box;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+
+  p:not(.rating-result p) {
+    color: var(--light-Grey);
+    line-height: 1.3lh;
+    letter-spacing: 0.5px;
+  }
+}
+
+
+/* ! ------------ Rating container styling ------------ */
+.rating-container {
+  img {
+    display: block;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: var(--btn-bg);
+  }
+}
+
+.rating-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 2rem;
+  gap: 0.5rem;
+
+  .btn {
+    font-family: Overpass;
+    font-weight: 700;
+    font-size: var(--font);
+    border: none;
+    block-size: 50px;
+    inline-size: 50px;
+    padding-block-start: 5px;
+    border-radius: 100px;
+    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--light-Grey);
+    transition: 300ms;
+
+    &:hover {
+      background-color: var(--accent-clr);
+      color: var(--very-Dark-Blue);
+    }
+
+    &:focus {
+      background-color: var(--white);
+      color: var(--very-Dark-Blue);
+    }
+  }
+}
+
+.submit-btn {
+  inline-size: 100%;
+  padding: 0.9rem 0 0.7rem;
+  font-family: Overpass;
+  font-size: var(--font);
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 100px;
+  background-color: var(--accent-clr);
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--very-Dark-Blue);
+  }
+}
+
+/* ! ------------ Thanks container styling ------------ */
+
+.thanks-container {
+  display: none;
+
+  img {
+    display: block;
+    margin-inline: auto;
+    margin-block: 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-block: 1rem;
+  }
+
+  h2+p {
+    text-align: center;
+  }
+}
+
+.rating-result {
+  display: flex;
+  justify-content: center;
+
+  p {
+    background-color: var(--btn-bg);
+    color: var(--accent-clr);
+    padding-block: 0.4rem 0.3rem;
+    padding-inline: 1rem;
+    border-radius: 100px;
+  }
+}
